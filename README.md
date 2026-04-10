@@ -1,64 +1,33 @@
 # Regulated Enterprise AI Engineering Handbook
 
 [![License: CC BY-SA 4.0](https://img.shields.io/badge/License-CC%20BY--SA%204.0-lightgrey.svg)](LICENSE)
-[![Docs Status](https://img.shields.io/badge/docs-544%20files-green)](README.md)
+[![Docs Status](https://img.shields.io/badge/docs-558%20files-green)](README.md)
 [![Sections](https://img.shields.io/badge/sections-29-blue)](README.md)
-[![Last Updated](https://img.shields.io/badge/updated-2025--04--10-informational)](README.md)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
-[![Contributors](https://img.shields.io/badge/contributors-open-orange)](CONTRIBUTING.md)
 
-> **A comprehensive engineering handbook for building secure, compliant, production-grade AI systems in regulated environments.**
+> A comprehensive engineering handbook for building secure, compliant, production-grade AI systems in regulated environments.
 
 ---
 
 ## Overview
 
-This is a **production-grade engineering handbook** for engineers building enterprise AI systems in **highly regulated environments** — global banks, fintechs, healthcare companies, insurers, and government organizations.
+This is a **production-grade engineering handbook** for engineers building enterprise AI systems in **highly regulated environments**: global banks, fintechs, healthcare companies, insurers, and government organizations.
 
-It covers the complete spectrum: backend engineering, frontend architecture, platform engineering, DevOps, security, compliance, GenAI systems, observability, testing, engineering culture, and technical leadership — all through the lens of **shipping reliable, auditable, safe software at scale**.
+It covers the complete spectrum: backend engineering, frontend architecture, platform engineering, DevOps, security, compliance, GenAI systems, observability, testing, engineering culture, and technical leadership. All through the lens of **shipping reliable, auditable, safe software at scale**.
 
-This is not a theoretical textbook. Every guide contains real banking examples, production-grade code samples, architecture diagrams, incident stories, interview preparation, and checklists you can use on Monday morning.
+This is not a theoretical textbook. Every guide contains real banking examples, production-grade code samples, incident stories, interview preparation, and checklists you can use on Monday morning.
 
-```mermaid
-graph TB
-    subgraph Foundation
-        A[Engineering<br/>Philosophy]
-        B[Banking<br/>Domain]
-        C[Regulations &<br/>Compliance]
-    end
+### Learning Path
 
-    subgraph Build
-        D[Backend<br/>Engineering]
-        E[Frontend<br/>Engineering]
-        F[Security<br/>Engineering]
-        G[Databases &<br/>Data]
-    end
-
-    subgraph Platform
-        H[GenAI<br/>Platforms]
-        I[RAG &<br/>Search]
-        J[Kubernetes &<br/>OpenShift]
-        K[CI/CD &<br/>DevOps]
-    end
-
-    subgraph Operate
-        L[Observability &<br/>Monitoring]
-        M[Testing &<br/>Quality]
-        N[Incident<br/>Management]
-        O[Architecture &<br/>Design]
-    end
-
-    subgraph Grow
-        P[Engineering<br/>Culture]
-        Q[Leadership &<br/>Collaboration]
-        R[Interview<br/>Preparation]
-        S[Hands-On<br/>Exercises]
-    end
-
-    Foundation --> Build
-    Build --> Platform
-    Platform --> Operate
-    Operate --> Grow
+```
+Foundation              Build                   Platform                Operate                Grow
+-------------------     --------------------    --------------------    --------------------   --------------------
+Engineering Philosophy  Backend Engineering     GenAI Platforms         Observability          Engineering Culture
+Banking Domain          Frontend Engineering    RAG and Search          Testing and Quality    Leadership
+Regulations             Security Engineering    Kubernetes/OpenShift    Incident Management    Interview Prep
+                        Databases               CI/CD and DevOps        Architecture           Exercises
+                        Data Engineering        Infrastructure                                 Templates
+                                                                                                 Glossary
 ```
 
 ## Who This Is For
@@ -76,7 +45,7 @@ graph TB
 ## Quick Navigation
 
 <details>
-<summary><b>📚 Core Engineering (Click to expand)</b></summary>
+<summary><b>Core Engineering</b></summary>
 
 | Section | Files | Key Topics |
 |---------|-------|-----------|
@@ -85,29 +54,29 @@ graph TB
 | [Security Engineering](security/) | 24 | OWASP, OAuth2/OIDC, prompt injection, jailbreak defense, supply chain security |
 | [Databases](databases/) | 23 | Postgres, pgvector, Redis, replication, HA, multi-tenant patterns |
 | [Data Engineering](data-engineering/) | 26 | SQL, Kafka, Spark, CDC, data quality, embedding pipelines |
-| [Testing & Quality](testing-and-quality/) | 22 | Unit/integration/E2E, chaos engineering, LLM evaluation, golden datasets |
+| [Testing and Quality](testing-and-quality/) | 22 | Unit/integration/E2E, chaos engineering, LLM evaluation, golden datasets |
 
 </details>
 
 <details>
-<summary><b>🤖 AI & GenAI Systems (Click to expand)</b></summary>
+<summary><b>AI and GenAI Systems</b></summary>
 
 | Section | Files | Key Topics |
 |---------|-------|-----------|
 | [GenAI Platforms](genai-platforms/) | 34+ | LLM fundamentals, agents, tool calling, multi-model architecture, safety, 6 banking use cases |
-| [RAG & Search](rag-and-search/) | 24 | Chunking, embeddings, retrieval, reranking, pgvector, evaluation, production incidents |
+| [RAG and Search](rag-and-search/) | 24 | Chunking, embeddings, retrieval, reranking, pgvector, evaluation, production incidents |
 | [Architecture](architecture/) | 23 | ADRs, design patterns, 3 full architecture examples with Mermaid diagrams |
 | [System Design](system-design/) | 15 | 14 complete system designs with requirements, tradeoffs, diagrams, interview Q&A |
 
 </details>
 
 <details>
-<summary><b>🏗️ Platform & Operations (Click to expand)</b></summary>
+<summary><b>Platform and Operations</b></summary>
 
 | Section | Files | Key Topics |
 |---------|-------|-----------|
-| [Kubernetes & OpenShift](kubernetes-openshift/) | 23 | Pods, deployments, SCCs, operators, GPU workloads, blue/green, canary |
-| [CI/CD & DevOps](cicd-devops/) | 21 | GitHub Actions, Tekton, Harness, Terraform, change management, progressive delivery |
+| [Kubernetes and OpenShift](kubernetes-openshift/) | 23 | Pods, deployments, SCCs, operators, GPU workloads, blue/green, canary |
+| [CI/CD and DevOps](cicd-devops/) | 21 | GitHub Actions, Tekton, Harness, Terraform, change management, progressive delivery |
 | [Observability](observability/) | 22 | OpenTelemetry, SLOs, GenAI observability, token usage, hallucination monitoring |
 | [Infrastructure](infrastructure/) | 13 | Cloud, networking, compute, storage, platform engineering, golden paths |
 | [Incident Management](incident-management/) | 18 | Incident command, communication, GenAI-specific playbooks, banking obligations |
@@ -115,12 +84,12 @@ graph TB
 </details>
 
 <details>
-<summary><b>🏦 Domain Knowledge & Culture (Click to expand)</b></summary>
+<summary><b>Domain Knowledge and Culture</b></summary>
 
 | Section | Files | Key Topics |
 |---------|-------|-----------|
 | [Banking Domain](banking-domain/) | 13 | Banking 101, retail/investment/corporate banking, payments, AML, KYC, lending |
-| [Regulations & Compliance](regulations-and-compliance/) | 21 | GDPR, PCI-DSS, SOC2, ISO 27001, BCBS 239, SR 11-7, AI governance, EU AI Act |
+| [Regulations and Compliance](regulations-and-compliance/) | 21 | GDPR, PCI-DSS, SOC2, ISO 27001, BCBS 239, SR 11-7, AI governance, EU AI Act |
 | [Engineering Philosophy](engineering-philosophy/) | 11 | Bias for action, pragmatism vs excellence, craftsmanship, collaboration |
 | [Engineering Culture](engineering-culture/) | 16 | Code reviews, mentorship, pair programming, psychological safety |
 | [Leadership](leadership-and-collaboration/) | 15 | Influence without authority, stakeholder management, executive communication |
@@ -128,7 +97,7 @@ graph TB
 </details>
 
 <details>
-<summary><b>🎯 Interview Prep & Practice (Click to expand)</b></summary>
+<summary><b>Interview Prep and Practice</b></summary>
 
 | Section | Files | Key Topics |
 |---------|-------|-----------|
@@ -146,7 +115,7 @@ graph TB
 ## 30/60/90 Day Study Plan
 
 <details>
-<summary><b>📅 First 30 Days — Build Foundation</b></summary>
+<summary><b>First 30 Days: Build Foundation</b></summary>
 
 | Week | Focus | Deliverables |
 |------|-------|-------------|
@@ -159,7 +128,7 @@ graph TB
 </details>
 
 <details>
-<summary><b>📅 Days 31-60 — Deep Technical Mastery</b></summary>
+<summary><b>Days 31-60: Deep Technical Mastery</b></summary>
 
 | Week | Focus | Deliverables |
 |------|-------|-------------|
@@ -167,11 +136,11 @@ graph TB
 | 7 | [Kubernetes/OpenShift](kubernetes-openshift/) | Deploy services, understand Routes, SCCs, Operators |
 | 8 | [CI/CD](cicd-devops/) + [Observability](observability/) | Design a Tekton pipeline, set up OpenTelemetry |
 
-**Checkpoint:** You should be able to design a secure RAG-based internal assistant, explain the deployment pipeline, and describe how you'd monitor it in production.
+**Checkpoint:** You should be able to design a secure RAG-based internal assistant, explain the deployment pipeline, and describe how you would monitor it in production.
 </details>
 
 <details>
-<summary><b>📅 Days 61-90 — Architecture, Leadership, Interview Readiness</b></summary>
+<summary><b>Days 61-90: Architecture, Leadership, Interview Readiness</b></summary>
 
 | Week | Focus | Deliverables |
 |------|-------|-------------|
@@ -185,77 +154,39 @@ graph TB
 ## Core Principles
 
 ### Engineering Principles
-- **Systems thinking over feature thinking** — Every decision ripples through the entire system
-- **Documentation is engineering** — If it isn't documented, it didn't happen
-- **Automation over toil** — If you do something twice, automate it
-- **Error budgets drive decisions** — Data-driven shipping, not gut-feel
-- **Production first** — Design systems assuming they *will* fail in production
+- **Systems thinking over feature thinking:** Every decision ripples through the entire system
+- **Documentation is engineering:** If it is not documented, it did not happen
+- **Automation over toil:** If you do something twice, automate it
+- **Error budgets drive decisions:** Data-driven shipping, not gut-feel
+- **Production first:** Design systems assuming they will fail in production
 
 ### Security Principles
-- **Trust nothing** — Every input is untrusted; every request must be authenticated and authorized
-- **Defense in depth** — No single control is perfect; layer your defenses
-- **Least privilege** — No one gets more access than they need
-- **Fail securely** — Errors never leak sensitive information or system internals
-- **Shift left** — Security checklists in PR templates, automated scanning in CI
+- **Trust nothing:** Every input is untrusted, every request must be authenticated and authorized
+- **Defense in depth:** No single control is perfect, layer your defenses
+- **Least privilege:** No one gets more access than they need
+- **Fail securely:** Errors never leak sensitive information or system internals
+- **Shift left:** Security checklists in PR templates, automated scanning in CI
 
 ### AI Safety Principles
-- **Safety and reliability over raw capability** — A less capable model that is reliable and safe is better
-- **Multi-model by default** — Never depend on a single model provider
-- **Prompts are code** — Versioned, tested, reviewed, managed like any other code
-- **Measure, don't guess** — Golden datasets, regular evaluation, hallucination tracking
-- **Human oversight for high-stakes** — Human-in-the-loop for decisions that matter
+- **Safety and reliability over raw capability:** A less capable model that is reliable and safe is better
+- **Multi-model by default:** Never depend on a single model provider
+- **Prompts are code:** Versioned, tested, reviewed, managed like any other code
+- **Measure, do not guess:** Golden datasets, regular evaluation, hallucination tracking
+- **Human oversight for high-stakes:** Human-in-the-loop for decisions that matter
 
 ### Compliance Principles
-- **Regulation-driven, not feature-driven** — Every requirement traced to a regulation
-- **Evidence-first** — Concrete, auditable, time-stamped evidence for every claim
-- **Data minimization** — Collect and retain only what is necessary
-- **Traceability** — Every control traceable: Regulation → Policy → Control → Implementation → Evidence
-- **Always audit-ready** — Never scrambling; always prepared
+- **Regulation-driven, not feature-driven:** Every requirement traced to a regulation
+- **Evidence-first:** Concrete, auditable, time-stamped evidence for every claim
+- **Data minimization:** Collect and retain only what is necessary
+- **Traceability:** Every control traceable: Regulation to Policy to Control to Implementation to Evidence
+- **Always audit-ready:** Never scrambling, always prepared
 
-### Testing & Reliability Principles
-- **Quality is built in, not inspected in** — Testing is a culture, not a phase
-- **AI quality is different** — Probabilistic behavior requires golden datasets and human review
-- **SLOs define reliability** — User-centric, measurable, actionable
-- **Blameless postmortems** — Incidents are system failures, not human failures
-- **Action items drive change** — Every postmortem produces real, tracked improvements
-
-## Key Architecture Overview
-
-The handbook follows a layered learning model:
-
-```mermaid
-graph LR
-    subgraph Layer 1: Understand the Domain
-        D1[Banking<br/>Context]
-        D2[Regulatory<br/>Constraints]
-        D3[Engineering<br/>Mindset]
-    end
-
-    subgraph Layer 2: Build Reliable Services
-        B1[Backend<br/>APIs]
-        B2[Frontend<br/>UIs]
-        B3[Data<br/>Systems]
-        B4[Security<br/>Controls]
-    end
-
-    subgraph Layer 3: Operate at Scale
-        O1[GenAI<br/>Platforms]
-        O2[Kubernetes &<br/>OpenShift]
-        O3[CI/CD &<br/>DevOps]
-        O4[Observability &<br/>Monitoring]
-    end
-
-    subgraph Layer 4: Lead & Grow
-        L1[Architecture &<br/>System Design]
-        L2[Engineering<br/>Culture]
-        L3[Leadership &<br/>Communication]
-        L4[Interview &<br/>Career Prep]
-    end
-
-    Layer 1 --> Layer 2
-    Layer 2 --> Layer 3
-    Layer 3 --> Layer 4
-```
+### Testing and Reliability Principles
+- **Quality is built in, not inspected in:** Testing is a culture, not a phase
+- **AI quality is different:** Probabilistic behavior requires golden datasets and human review
+- **SLOs define reliability:** User-centric, measurable, actionable
+- **Blameless postmortems:** Incidents are system failures, not human failures
+- **Action items drive change:** Every postmortem produces real, tracked improvements
 
 ## How to Use This Handbook
 
@@ -274,7 +205,7 @@ graph LR
 5. Use the relevant [`agents/`](agents/) for AI-assisted code reviews
 
 ### For Real-World AI Projects
-1. Follow the [Theory → Code → Design → Reality loop](#how-to-combine-theory-coding-system-design-and-real-world-scenarios)
+1. Follow the theory, code, design, reality loop below
 2. Study [`real-world-case-studies/`](real-world-case-studies/) for production failure stories
 3. Apply [`genai-platforms/`](genai-platforms/) patterns for safe AI architecture
 4. Use [`skills/genai-guardrails.md`](skills/genai-guardrails.md) for AI safety controls
@@ -284,20 +215,18 @@ graph LR
 Every section in this handbook is interconnected. The most effective learning path follows a loop:
 
 ```
-┌─────────────────────────────────────────────────────────────┐
-│  THEORY          Read the concept in the relevant doc       │
-│    │           (e.g., skills/secure-api-design.md)          │
-│    ▼                                                        │
-│  CODE            Build it in exercises/ with constraints    │
-│    │           (e.g., Implement rate limiting in FastAPI)   │
-│    ▼                                                        │
-│  DESIGN          Architect it in system-design/             │
-│    │           (e.g., Design an AI Gateway Platform)        │
-│    ▼                                                        │
-│  REALITY         Study what went wrong in                   │
-│    │           real-world-case-studies/ and                 │
-│    └──────────► incident-management/                        │
-└─────────────────────────────────────────────────────────────┘
+THEORY          Read the concept in the relevant doc
+  |            (e.g., skills/secure-api-design.md)
+  v
+CODE            Build it in exercises/ with constraints
+  |            (e.g., Implement rate limiting in FastAPI)
+  v
+DESIGN          Architect it in system-design/
+  |            (e.g., Design an AI Gateway Platform)
+  v
+REALITY         Study what went wrong in
+                real-world-case-studies/ and
+                incident-management/
 ```
 
 **Example flow:**
@@ -326,20 +255,19 @@ This handbook includes 13 specialized agent instruction files in [`agents/`](age
 | [Engineering Manager](agents/engineering-manager-agent.md) | Team dynamics, delivery, stakeholder communication |
 | [Interview Coach](agents/interview-coach-agent.md) | Mock interviews, STAR story practice, feedback |
 
-**Example usage:**
-> "Act as the security-reviewer-agent defined in `agents/security-reviewer-agent.md`. Review the following API endpoint for security issues: [your code]"
+**Example usage:** "Act as the security-reviewer-agent defined in `agents/security-reviewer-agent.md`. Review the following API endpoint for security issues: [your code]"
 
 ## Common Anti-Patterns to Avoid
 
 <details>
-<summary><b>⚠️ Click for common engineering anti-patterns</b></summary>
+<summary><b>Click for common engineering anti-patterns</b></summary>
 
 | Anti-Pattern | The Problem | The Fix |
 |-------------|-------------|---------|
 | **Gold-plating** | Building for 10x scale before proving 1x | Build for today with a clear scaling path |
 | **Analysis paralysis** | Weeks of evaluation when a 2-week spike would decide | Time-box research, build spikes, decide with evidence |
 | **Security as gate** | Security review at end of development | Shift left: checklists in PR templates, automated scanning in CI |
-| **Compliance as afterthought** | "Is this compliant?" after building | Involve compliance during design phase |
+| **Compliance as afterthought** | Asking "is this compliant?" after building | Involve compliance during design phase |
 | **Single model dependency** | All AI calls to one provider, no fallback | Multi-model architecture with automatic failover |
 | **Prompt spaghetti** | Prompts in code, duplicated, never versioned | Centralized prompt management with versioning and rollout controls |
 | **Ivory tower architecture** | Elaborate diagrams no team can implement | Ground architecture in team capability and delivery timeline |
@@ -352,55 +280,55 @@ This handbook includes 13 specialized agent instruction files in [`agents/`](age
 ## Frequently Asked Questions
 
 <details>
-<summary><b>❓ Is this handbook specific to one bank or technology?</b></summary>
+<summary><b>Is this handbook specific to one bank or technology?</b></summary>
 
-No. The patterns, principles, and examples are applicable across global banks, fintechs, healthcare companies, insurers, and government organizations building AI systems. Technology examples use Python, TypeScript, Go, Java, React, Next.js, Postgres, Kubernetes, OpenShift, Tekton, and Harness — but the principles apply regardless of stack.
+No. The patterns, principles, and examples are applicable across global banks, fintechs, healthcare companies, insurers, and government organizations building AI systems. Technology examples use Python, TypeScript, Go, Java, React, Next.js, Postgres, Kubernetes, OpenShift, Tekton, and Harness, but the principles apply regardless of stack.
 </details>
 
 <details>
-<summary><b>❓ Do I need banking experience to use this handbook?</b></summary>
+<summary><b>Do I need banking experience to use this handbook?</b></summary>
 
-No. The [`banking-domain/`](banking-domain/) section teaches banking fundamentals from scratch. You'll learn how banks work, how money moves, why systems are complex, and how GenAI can support each area — all written for engineers.
+No. The [`banking-domain/`](banking-domain/) section teaches banking fundamentals from scratch. You will learn how banks work, how money moves, why systems are complex, and how GenAI can support each area, all written for engineers.
 </details>
 
 <details>
-<summary><b>❓ Is this useful for non-banking regulated environments?</b></summary>
+<summary><b>Is this useful for non-banking regulated environments?</b></summary>
 
 Yes. Healthcare (HIPAA), government (FedRAMP), insurance, and other regulated industries face similar challenges: audit requirements, data protection, compliance reviews, and regulated change management. The patterns transfer directly.
 </details>
 
 <details>
-<summary><b>❓ How current is the AI/GenAI content?</b></summary>
+<summary><b>How current is the AI/GenAI content?</b></summary>
 
 The handbook covers foundational patterns that are model-agnostic: RAG architectures, prompt management, guardrails, evaluation, multi-model routing, safety controls, and observability. These patterns remain relevant as individual models evolve.
 </details>
 
 <details>
-<summary><b>❓ Can I use this to prepare for FAANG interviews?</b></summary>
+<summary><b>Can I use this to prepare for FAANG interviews?</b></summary>
 
 Yes. The [`interview-prep/`](interview-prep/) section includes 300+ questions, 22 exercises, 14 system designs, and STAR stories. The banking-specific questions are a bonus for specialized roles, but the technical depth applies to any senior engineering interview.
 </details>
 
 <details>
-<summary><b>❓ Is this repository open-source?</b></summary>
+<summary><b>Is this repository open-source?</b></summary>
 
 Yes. It is licensed under [CC BY-SA 4.0](LICENSE). You are free to use, adapt, and contribute. See [CONTRIBUTING.md](CONTRIBUTING.md) for how to contribute.
 </details>
 
 ## Contributing
 
-Contributions are welcome! This handbook grows through community input.
+Contributions are welcome. This handbook grows through community input.
 
-- **🐛 Report issues:** [Open an issue](https://github.com/USERNAME/regulated-enterprise-ai-engineering-handbook/issues)
-- **📝 Contribute content:** Read [CONTRIBUTING.md](CONTRIBUTING.md)
-- **🔒 Security concerns:** See [SECURITY.md](SECURITY.md)
-- **💬 Ask questions:** See [SUPPORT.md](SUPPORT.md)
-- **📋 View roadmap:** See [ROADMAP.md](ROADMAP.md)
+- Report issues: [Open an issue](https://github.com/USERNAME/regulated-enterprise-ai-engineering-handbook/issues)
+- Contribute content: Read [CONTRIBUTING.md](CONTRIBUTING.md)
+- Security concerns: See [SECURITY.md](SECURITY.md)
+- Ask questions: See [SUPPORT.md](SUPPORT.md)
+- View roadmap: See [ROADMAP.md](ROADMAP.md)
 
 Before contributing, please read:
-1. [CONTRIBUTING.md](CONTRIBUTING.md) — How to contribute
-2. [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md) — Community standards
-3. [SECURITY.md](SECURITY.md) — Reporting security concerns
+1. [CONTRIBUTING.md](CONTRIBUTING.md) - How to contribute
+2. [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md) - Community standards
+3. [SECURITY.md](SECURITY.md) - Reporting security concerns
 
 ## Recommended Tools
 
@@ -419,16 +347,16 @@ Before contributing, please read:
 
 ## Recommended Reading
 
-- *Designing Data-Intensive Applications* — Martin Kleppmann
-- *Site Reliability Engineering* — Google SRE Team
-- *Accelerate* — Nicole Forsgren, Jez Humble, Gene Kim
-- *The Staff Engineer's Path* — Tanya Reilly
-- *Building Secure & Reliable Systems* — Google
-- *Fundamentals of Software Architecture* — Mark Richards, Neal Ford
-- *AI Engineering* — Chip Huyen
-- *Designing Machine Learning Systems* — Chip Huyen
-- *A Philosophy of Software Design* — John Ousterhout
-- *Team Topologies* — Matthew Skelton, Manuel Pais
+- *Designing Data-Intensive Applications* - Martin Kleppmann
+- *Site Reliability Engineering* - Google SRE Team
+- *Accelerate* - Nicole Forsgren, Jez Humble, Gene Kim
+- *The Staff Engineer's Path* - Tanya Reilly
+- *Building Secure and Reliable Systems* - Google
+- *Fundamentals of Software Architecture* - Mark Richards, Neal Ford
+- *AI Engineering* - Chip Huyen
+- *Designing Machine Learning Systems* - Chip Huyen
+- *A Philosophy of Software Design* - John Ousterhout
+- *Team Topologies* - Matthew Skelton, Manuel Pais
 
 ## Suggested GitHub Topics
 
@@ -436,7 +364,7 @@ Before contributing, please read:
 
 ## Suggested Repository Description
 
-> Engineering handbook for building secure, compliant, production-grade AI systems in regulated environments. Covers backend, frontend, platform engineering, security, compliance, GenAI, Kubernetes, CI/CD, observability, system design, and engineering leadership.
+Engineering handbook for building secure, compliant, production-grade AI systems in regulated environments. Covers backend, frontend, platform engineering, security, compliance, GenAI, Kubernetes, CI/CD, observability, system design, and engineering leadership.
 
 ## License
 
@@ -448,6 +376,4 @@ This handbook draws on engineering practices from organizations like Google, Net
 
 ---
 
-*"The best engineers aren't the ones who know the most. They're the ones who know what they don't know, ask the right questions, and never stop learning."*
-
-**Start with [`onboarding/first-30-days.md`](onboarding/first-30-days.md) and let's build something that matters.**
+Start with [`onboarding/first-30-days.md`](onboarding/first-30-days.md) and let us build something that matters.
