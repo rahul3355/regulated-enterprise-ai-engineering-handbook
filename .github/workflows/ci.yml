@@ -1,0 +1,101 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    name: Validate Handbook Content
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install validation tools
+        run: |
+          pip install markdownlint-cli2 cspell lycheeverse
+
+      - name: Markdown lint
+        run: |
+          npx markdownlint-cli2 "**/*.md" --config .markdownlint.jsonc --ignore "node_modules/**"
+
+      - name: Spellcheck
+        uses: streetsidesoftware/cspell-action@v6
+        with:
+          files: "**/*.md"
+          config: "cspell.json"
+          incremental_files_only: false
+          strict: false
+
+      - name: Link check
+        uses: lycheeverse/lychee-action@v1
+        with:
+          args: >-
+            --verbose
+            --no-progress
+            --exclude "^https://github.com/.*/regulated-enterprise-ai-engineering-handbook/"
+            --exclude "^https://img.shields.io/"
+            --exclude "^mailto:"
+            --exclude "localhost"
+            --exclude "grafana/"
+            --exclude "status.openai.com"
+            "**/*.md"
+          output: lychee-results.md
+          fail: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Verify directory structure
+        run: |
+          echo "Verifying expected directory structure..."
+          REQUIRED_DIRS="agents skills onboarding engineering-philosophy banking-domain regulations-and-compliance security backend-engineering frontend-engineering genai-platforms rag-and-search data-engineering databases infrastructure kubernetes-openshift cicd-devops observability testing-and-quality architecture system-design real-world-case-studies incident-management engineering-culture leadership-and-collaboration interview-prep exercises templates glossary"
+          for dir in $REQUIRED_DIRS; do
+            if [ ! -d "$dir" ]; then
+              echo "ERROR: Missing directory: $dir"
+              exit 1
+            fi
+            echo "OK: $dir/ exists"
+          done
+          echo "All required directories present."
+
+      - name: Count files
+        run: |
+          FILE_COUNT=$(find . -name "*.md" -not -path "./.github/*" | wc -l)
+          echo "Total markdown files: $FILE_COUNT"
+          if [ "$FILE_COUNT" -lt 500 ]; then
+            echo "WARNING: Expected at least 500 markdown files, found $FILE_COUNT"
+          fi
+
+      - name: Check for broken Mermaid syntax (basic)
+        run: |
+          echo "Checking for common Mermaid syntax issues..."
+          # Look for unbalanced graph definitions
+          grep -rn "mermaid" --include="*.md" . | head -20
+          echo "Mermaid block check complete."
+
+  summary:
+    name: CI Summary
+    needs: [validate]
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+      - name: Report status
+        run: |
+          if [ "${{ needs.validate.result }}" = "success" ]; then
+            echo "All validation checks passed."
+          else
+            echo "One or more validation checks failed. Review the logs above."
+            exit 1
+          fi

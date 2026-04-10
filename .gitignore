@@ -1,0 +1,38 @@
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Node modules (for local tooling)
+node_modules/
+
+# Python virtual environments
+.venv/
+venv/
+__pycache__/
+
+# Build artifacts
+*.log
+*.tmp
+
+# Lychee cache
+.lycheecache
+
+# Spellcheck output
+cspell-output.txt
+
+# Local configuration (never commit secrets)
+.env
+.env.local
+.env.*.local
+
+# Temporary files
+*.bak
+*.temp

@@ -1,0 +1,40 @@
+# Dependabot configuration
+# Keeps GitHub Actions and other dependencies up to date automatically
+# Docs: https://docs.github.com/en/code-security/dependabot/dependabot-version-updates/configuration-options-for-the-dependabot.yml-file
+
+version: 2
+updates:
+  # Keep GitHub Actions up to date
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "09:00"
+      timezone: "UTC"
+    open-pull-requests-limit: 5
+    reviewers:
+      - "handbook-maintainers"
+    labels:
+      - "dependencies"
+      - "ci-cd"
+      - "automated"
+    commit-message:
+      prefix: "ci"
+      include: "scope"
+
+  # Keep MkDocs dependencies up to date (if using GitHub Pages)
+  - package-ecosystem: "pip"
+    directory: "/docs"
+    schedule:
+      interval: "monthly"
+    open-pull-requests-limit: 3
+    reviewers:
+      - "handbook-maintainers"
+    labels:
+      - "dependencies"
+      - "documentation"
+      - "automated"
+    commit-message:
+      prefix: "docs"
+      include: "scope"

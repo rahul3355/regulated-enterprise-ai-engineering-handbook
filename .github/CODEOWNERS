@@ -1,0 +1,63 @@
+# CODEOWNERS
+# These owners will be requested for review when someone opens a PR
+# that changes files in their area of ownership.
+#
+# Format: path_pattern    owner1 owner2
+# Docs: https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners
+
+# Overall maintainers
+* @handbook-maintainers
+
+# Core sections
+README.md @handbook-maintainers @content-leads
+CONTRIBUTING.md @handbook-maintainers
+CODE_OF_CONDUCT.md @handbook-maintainers
+SECURITY.md @security-leads
+LICENSE @handbook-maintainers
+
+# Engineering content
+agents/ @engineering-leads
+skills/ @engineering-leads
+onboarding/ @engineering-leads
+engineering-philosophy/ @content-leads
+engineering-culture/ @content-leads
+leadership-and-collaboration/ @content-leads
+
+# Technical content
+backend-engineering/ @backend-leads @python-reviewers @go-reviewers @java-reviewers @typescript-reviewers
+frontend-engineering/ @frontend-leads
+databases/ @database-leads
+data-engineering/ @data-leads
+infrastructure/ @platform-leads
+
+# Security & Compliance
+security/ @security-leads
+regulations-and-compliance/ @compliance-leads
+
+# AI/ML content
+genai-platforms/ @genai-leads @ai-safety-leads
+rag-and-search/ @genai-leads
+
+# Platform & Operations
+kubernetes-openshift/ @platform-leads @sre-leads
+cicd-devops/ @platform-leads
+observability/ @sre-leads
+testing-and-quality/ @testing-leads
+
+# Architecture & Design
+architecture/ @architecture-leads
+system-design/ @architecture-leads
+
+# Practice & Preparation
+interview-prep/ @content-leads
+exercises/ @engineering-leads
+templates/ @engineering-leads
+glossary/ @content-leads
+
+# Case Studies & Incidents
+real-world-case-studies/ @engineering-leads @sre-leads
+incident-management/ @sre-leads
+
+# GitHub automation
+.github/ @handbook-maintainers
+.github/workflows/ @platform-leads

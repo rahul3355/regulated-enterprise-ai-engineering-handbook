@@ -1,0 +1,69 @@
+name: Links Check
+
+on:
+  push:
+    branches: [main]
+    paths: ["**.md"]
+  pull_request:
+    branches: [main]
+    paths: ["**.md"]
+  schedule:
+    # Run weekly to catch link rot
+    - cron: "0 6 * * MON"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  lychee:
+    name: Check Links
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Restore lychee cache
+        uses: actions/cache@v4
+        with:
+          path: .lycheecache
+          key: lychee-cache-${{ runner.os }}-${{ hashFiles('**/*.md') }}
+          restore-keys: lychee-cache-
+
+      - name: Run lychee link checker
+        uses: lycheeverse/lychee-action@v1
+        with:
+          args: >-
+            --verbose
+            --no-progress
+            --cache
+            --max-cache-age 2d
+            --exclude "^https://github.com/.*/regulated-enterprise-ai-engineering-handbook/"
+            --exclude "^https://img.shields.io/"
+            --exclude "^mailto:"
+            --exclude "^localhost"
+            --exclude "^http://localhost"
+            --exclude "^grafana/"
+            --exclude "^status.openai.com"
+            --exclude "^status.anthropic.com"
+            --exclude "^cloud.google.com"
+            --exclude "^docs.aws.amazon.com"
+            --exclude "^learn.microsoft.com"
+            --exclude "^daringfireball.net"
+            --accept "200,429,403"
+            --timeout 20
+            --retry-wait-time 5
+            --max-retries 3
+            "**/*.md"
+          output: lychee-results.md
+          fail: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Upload link check results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: lychee-results
+          path: lychee-results.md
+          retention-days: 7
